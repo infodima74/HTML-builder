@@ -39,7 +39,7 @@ rl.write('Enter your text!\n');
 
 rl.on('line', (text) => {
   if (text.trim() === 'exit') rl.close();
-  writableStream.write(`\n${text}\n`, error => {
+  writableStream.write(`${text}\n`, error => {
     if (error) throw error;
   });
 });
