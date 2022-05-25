@@ -6,13 +6,13 @@ const put = path.join(__dirname, 'files');
 const putCopy = path.join(__dirname, 'files-copy');
 
 
-fs.rm(putCopy, { recursive:true }, (err) => {
+fs.rm(putCopy, { recursive:true, force:true }, (err) => {
     if(err){
                 console.error(err.message);
         return;
     }
     console.log("File deleted ");
-})
+
 fs.mkdir(putCopy, {recursive: true}, (error) => {
     if (error) {
       return console.error(error.message);
@@ -32,4 +32,5 @@ fs.mkdir(putCopy, {recursive: true}, (error) => {
         });
       });
     }
-  });
+  })
+});
